@@ -1,0 +1,20 @@
+# Minimal Bochs config (Stage 02 - boot + tiny kernel)
+# Run inside this directory:
+#   bochs -q -f bochsrc.txt
+# Or from repo root:
+#   bochs -q -f "2 - Bootloader with kernel/BootSectorKernel/bochsrc.txt"
+
+megs: 16
+romimage: file=/usr/share/bochs/BIOS-bochs-latest
+vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
+floppya: 1_44=floppyA, status=inserted
+boot: a
+display_library: x
+panic: action=ask
+error: action=report
+info: action=report
+
+# Optional debugger break:
+# magic_break: enabled=1
+
+# End

@@ -17,5 +17,6 @@ bootsect: bootsect.asm
 
 clean:
 	rm -f $(ARTIFACTS)
+	rm -f bochlog.txt
 
 .PHONY: all clean
