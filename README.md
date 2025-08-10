@@ -97,6 +97,26 @@ Este repositorio reescribe y adapta conceptos para entornos actuales.
 ### Contribuciones
 Pull requests bienvenidos cuando la estructura base esté establecida. Mantener estilo consistente y escribir una breve explicación por commit.
 
+### Comparar Etapas
+Forma GENERAL (desde la raíz del repositorio):
+```bash
+diff -ruN "<directorio_etapa_A>" "<directorio_etapa_B>" | less
+```
+Reemplaza `<directorio_etapa_A>` y `<directorio_etapa_B>` por las rutas exactas de las carpetas que quieras comparar (pueden tener espacios y números de versión distintos a futuro).
+
+Ejemplo :
+```bash
+diff -ruN "1 - Create Bootloader/BootSector" "2 - Bootloader with kernel/BootSectorKernel" | less
+```
+Explicación de flags:
+- `-r`: recursivo.
+- `-u`: formato unificado (contexto legible).
+- `-N`: trata archivos inexistentes en un lado como vacíos (muestra altas/bajas claramente).
+
+Sugerencias de lectura:
+- Primero observar archivos NUEVOS (líneas que empiezan con `+++`).
+- Luego revisar bloques con `@@` para entender el contexto del cambio.
+
 ---
 
 ## English
@@ -163,11 +183,31 @@ See Spanish section (same list applies).
 Recommend MIT or Apache-2.0. (Pending LICENSE file.)
 
 ### Credits
-Conceptually inspired by Pépin OS (Michelizza). Original (French) guide: https://michelizza.developpez.com/realiser-son-propre-systeme/#L  
+Conceptually inspired by Pépin OS (Michelizza). Original (French) guide: https://michelizza.developpez.com/realiser-son_propre_systeme/#L  
 Rewritten and adapted for current environments.
 
 ### Contributions
 PRs welcome after initial layout; keep commits focused and documented.
+
+### Comparing Stages
+GENERAL form (from repository root):
+```bash
+diff -ruN "<stage_dir_A>" "<stage_dir_B>" | less
+```
+Replace `<stage_dir_A>` / `<stage_dir_B>` with the exact milestone directories you want to compare (names and numbering will evolve).
+
+Example:
+```bash
+diff -ruN "1 - Create Bootloader/BootSector" "2 - Bootloader with kernel/BootSectorKernel" | less
+```
+Flag explanation:
+- `-r`: recursive.
+- `-u`: unified format (readable context).
+- `-N`: treat missing files as empty (shows added/removed files clearly).
+
+Reading tips:
+- Look at NEW files first (`+++` lines).
+- Then inspect each hunk starting with `@@` to grasp surrounding context.
 
 ---
 
