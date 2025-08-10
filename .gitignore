@@ -1,0 +1,25 @@
+# Build artifacts
+*.o
+*.obj
+*.bin
+*.iso
+*.img
+*.map
+*.lst
+*.log
+*.elf
+*.d
+build/
+out/
+
+# Editors / IDE
+*.swp
+.DS_Store
+.idea/
+.vscode/
+
+# Generated docs
+/site/
+
+# Misc
+*.tmp
