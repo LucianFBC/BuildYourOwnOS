@@ -1,0 +1,24 @@
+# Minimal Bochs config (Stage 01 - i386 boot sector)
+# Reliable, minimal, easiest to replicate. Extra options removed to avoid keymap panic.
+# Run here:
+#   bochs -q -f bochsrc.txt
+
+megs: 16
+romimage: file=/usr/share/bochs/BIOS-bochs-latest
+vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
+floppya: 1_44=floppyA, status=inserted
+boot: a
+log: bochslog.txt
+display_library: x
+panic: action=ask
+error: action=report
+info: action=report
+
+# Optional keyboard configuration (leave commented unless you need a custom map)
+# The previous line 'keyboard: keymap=auto' caused a panic in this build.
+# Uncomment ONE of these if necessary:
+# keyboard: keymap=/usr/share/bochs/keymaps/x11-pc-us.map
+# keyboard: keymap=/usr/share/bochs/keymaps/x11-pc-es.map
+# keyboard: keymap=none   # disable keymap translation
+
+# End

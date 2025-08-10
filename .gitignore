@@ -11,6 +11,8 @@
 *.d
 build/
 out/
+bootsect
+floppyA
 
 # Editors / IDE
 *.swp
